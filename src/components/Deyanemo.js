@@ -22,7 +22,6 @@ function QuestionPage(props) {
 
 function mapStateToProps({ authedUser, questions }, props) {
   const { id } = props.match.params;
-  console.log(props.match)
   return {
     id,
     questions,

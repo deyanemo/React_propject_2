@@ -23,7 +23,7 @@ class Question extends Component {
 
     return (
         // <div className='question'>
-    <Link to={`/deyanemo/${question.id}`} className='question'>
+    <Link to={`/questions/${question.id}`} className='question'>
         <img
           src={`${users[question.author].avatarURL}`}
           alt={`Avatar of ${question.author}`}
@@ -70,7 +70,6 @@ class Question extends Component {
 }
 
 function mapStateToProps({authedUser, users }) {
-  console.log(actions)
   return {
     authedUser,
     users,

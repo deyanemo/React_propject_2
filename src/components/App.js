@@ -8,7 +8,6 @@ import Login from './login';
 import Nav from './navigation';
 import NewQuestion from './newQuestion';
 import NotFound from './notfound';
-import QuestionPage from './question';
 import ProtectedRoute from '../utils/ProtectedRoute';
 import Deyanemo from './Deyanemo'
 class App extends Component {
@@ -28,9 +27,8 @@ class App extends Component {
                   <ProtectedRoute path='/' exact component={Dashboard} loggedIn={loggedIn} />
                   <ProtectedRoute path='/leaderboard' exact component={Leaderboard} loggedIn={loggedIn} />
                   <ProtectedRoute path='/add' exact component={NewQuestion} loggedIn={loggedIn} />
-                  <ProtectedRoute path='/questions/:id' exact component={QuestionPage} loggedIn={loggedIn} />
                   <Route path='/login' exact component={Login} />
-                  <ProtectedRoute path='/deyanemo/:id' exact component={Deyanemo} loggedIn={loggedIn} />
+                  <ProtectedRoute path='/questions/:id' exact component={Deyanemo} loggedIn={loggedIn} />
                   
                   <Route component={NotFound} />
                 </Switch>
@@ -49,3 +47,4 @@ function mapStateToProps({ authedUser }) {
 }
 
 export default connect(mapStateToProps)(App);
+
